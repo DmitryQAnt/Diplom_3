@@ -1,10 +1,11 @@
-import EnvConfig.Customer.Customer;
-import EnvConfig.Customer.CustomerGenerator;
-import EnvConfig.Customer.CustomerOperations;
-import EnvConfig.DriverRule;
+import envconfig.customer.Customer;
+import envconfig.customer.CustomerGenerator;
+import envconfig.customer.CustomerOperations;
+import envconfig.DriverRule;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -42,5 +43,8 @@ public class LogoutSuccessfulTest {
         loggedInPage.clickOnLogoutButton();
         assertions.checkForPositiveRegistration();
     }
-
+    @After
+    public void clearData() {
+        CustomerOperations.delete(bearer);
+    }
 }

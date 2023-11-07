@@ -1,7 +1,7 @@
-import EnvConfig.Customer.Customer;
-import EnvConfig.Customer.CustomerGenerator;
-import EnvConfig.Customer.CustomerOperations;
-import EnvConfig.DriverRule;
+import envconfig.customer.Customer;
+import envconfig.customer.CustomerGenerator;
+import envconfig.customer.CustomerOperations;
+import envconfig.DriverRule;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;

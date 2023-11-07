@@ -1,9 +1,9 @@
-import Locators.LoginLocatorsPage;
+import locators.LoginLocatorsPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static Locators.LoginLocatorsPage.*;
+import static locators.LoginLocatorsPage.*;
 
 public class LoginPage {
     final WebDriver driver;

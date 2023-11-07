@@ -1,6 +1,5 @@
-import EnvConfig.EnvConfig;
-import Locators.MainLocatorsPage;
-import Locators.RegistrationLocatorsPage;
+import envconfig.EnvConfig;
+import locators.MainLocatorsPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static Locators.MainLocatorsPage.*;
+import static locators.MainLocatorsPage.*;
 
 public class MainPage {
     WebDriver driver;

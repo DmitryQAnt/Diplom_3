@@ -1,5 +1,5 @@
-import EnvConfig.Customer.*;
-import EnvConfig.DriverRule;
+import envconfig.customer.*;
+import envconfig.DriverRule;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;

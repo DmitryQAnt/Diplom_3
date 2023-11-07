@@ -1,14 +1,7 @@
-import EnvConfig.EnvConfig;
-import Locators.RegistrationLocatorsPage;
+import locators.RegistrationLocatorsPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-
-import static Locators.RegistrationLocatorsPage.REGISTRATION_EMAIL_FIELD;
 
 public class RegistrationPage {
     final WebDriver driver;

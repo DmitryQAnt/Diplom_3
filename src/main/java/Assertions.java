@@ -1,6 +1,6 @@
-import EnvConfig.EnvConfig;
-import Locators.MainLocatorsPage;
-import Locators.RegistrationLocatorsPage;
+import envconfig.EnvConfig;
+import locators.MainLocatorsPage;
+import locators.RegistrationLocatorsPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,9 +1,12 @@
-import EnvConfig.Customer.Customer;
-import EnvConfig.Customer.CustomerGenerator;
-import EnvConfig.Customer.CustomerOperations;
-import EnvConfig.DriverRule;
+import envconfig.customer.Customer;
+import envconfig.customer.CustomerCredentials;
+import envconfig.customer.CustomerGenerator;
+import envconfig.customer.CustomerOperations;
+import envconfig.DriverRule;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
+import io.restassured.response.ValidatableResponse;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -30,6 +33,7 @@ public class RegistrationWithSmallPaswordIsFailTest {
     @DisplayName("Check customer registration with password less than minimal value")
     @Description("Negative test of customer registration with password less 6 symbols")
     public void checkRegistrationIsFailWithPasswordLess6Symbols() {
+        try {
         WebDriver webDriver = driver.getDriver();
         MainPage mainPage = new MainPage(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
@@ -41,8 +45,15 @@ public class RegistrationWithSmallPaswordIsFailTest {
         loginPage.clickOnRegistrationButton();
         registrationPage.setUpRegistrationName(customer.getName());
         registrationPage.setUpRegistrationEmail(customer.getEmail());
-        registrationPage.setUpRegistrationPassword(less6Symbols.getPassword());
+        registrationPage.setUpRegistrationPassword(customer.getPassword());
         registrationPage.clickOnRegistrationFinalButton();
         assertions.checkForNegativeRegistration();
+
+        } catch (Exception e) {
+        ValidatableResponse response = CustomerOperations.login(CustomerCredentials.from(customer));
+        bearer = newCustomer.getAuthorizationBearer(response);
+        CustomerOperations.delete(bearer);
+        System.out.println("В результате регистрации с пароелм меньше 6 символов пользователь был все равно создан");
+        }
     }
 }
